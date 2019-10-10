@@ -25,6 +25,8 @@ exec -it :id :command - executes a command on a docker container, -it is or -i -
 exec -it :id sh -allows you to open shell within docker container (linux env) and the shell allows you to run commands within the container...super powerful
 To exit shell use ctrl d or cmd d or exit
 
+build . - builds a docker image based on which docker file is in directory
+
 II: Create and build docker images
 
 How to create a Docker Image:
