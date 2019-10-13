@@ -29,12 +29,30 @@ build . - builds a docker image based on which docker file is in directory
 
 II: Create and build docker images
 
-How to create a Docker Image:
+    A. How to create a Docker Image:
 
-Make Docker file which is a plain text file
+    Make Docker file which is a plain text file
 
-specify base image
+    specify base image
 
-run commands to install additional programs
+    run commands to install additional programs
 
-specify command to run upon start of container
+    specify command to run upon start of container
+
+    B. Docker Build Cache
+
+    if you build another image based on the docker file that has not been changed docker will use the
+    cache to build the image
+
+    if a command is changed in the file the cache will be used up until that command
+    any command after that command will not use the cache to build
+
+    in order to use the cache more often you can try to make all the changes towards the end of the file
+
+    C. Tagging a Docker Image
+
+    to give a name to the created container you can do
+
+    docker build -t name .
+
+    the convention is docker build -t *your_docker_id*/*repo/project_name*:*version* .
