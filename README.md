@@ -82,3 +82,15 @@ III: Docker file syntax
     copies from specified path (the first ./) to destination
     Used to take files from your current directory and copy them into the docker
     image file system
+
+    COPY can be used more than once in a docker file to take advantage of the cache
+    for example if a file is changed the entire container needs to be rebuilt
+    if the container is rebuilt you should not have to install all dependicies using
+    a package manager because re installing dependicies can take a long time with large
+    projects
+
+    use COPY once on the pipfile or package json
+    then run npm install
+
+    then copy the rest of the file system
+    this allows you to re use the npm/pip install from cache
