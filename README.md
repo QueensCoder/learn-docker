@@ -114,3 +114,25 @@ IV Docker Compose
     docker-compose up :  docker run <myimage>
 
     docker-compose up --build : docker build then docker run <myimage>
+
+    docker-compose up -d : launch containers in background inorder to have terminal avaible
+
+    docker-compose down : stop containers (instead of having to docker stop each by id)
+
+    docker-compose ps : looks for docker-compose.yml file in directory
+    if found it shows which containers are running for that file if applicable
+    similar to docker ps
+
+    C. Restart policies
+
+    restart policies allow a container to restart if it crashed, sort of removes the need
+    for nodemon
+
+    "no" - never attempt to restart container if it stops or crashes, has to be quotes
+    because of yml file treats no as false
+
+    always - always attempt to restart container if it stops or crashes
+
+    on-failure - restart container if it stops with an error code
+
+    unless-stopped - restart container unless the developer stops it
