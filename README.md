@@ -94,3 +94,23 @@ III: Docker file syntax
 
     then copy the rest of the file system
     this allows you to re use the npm/pip install from cache
+
+IV Docker Compose
+
+    A. use
+    docker compose allows us to run several commands instead of having to write out
+    each command using docker cli
+    see docker-compose.yml inside of visit_app
+
+    when using this to make more than on container this allows for the containers to
+    have access to one another
+
+    this file is simliar to xml and json
+
+    there are key value pairs and arrays , only the format is different
+
+    B. Commands
+
+    docker-compose up :  docker run <myimage>
+
+    docker-compose up --build : docker build then docker run <myimage>
