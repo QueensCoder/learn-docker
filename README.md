@@ -1,8 +1,8 @@
 I : Docker CLI commands
 
-    Command Prefix: docker
+    A.  Command Prefix: docker
 
-    Command Suffixes:
+    B. Command Suffixes:
 
     run looks for image on local if not found grabs image from server and then runs it
 
@@ -26,6 +26,13 @@ I : Docker CLI commands
     To exit shell use ctrl d or cmd d or exit
 
     build . - builds a docker image based on which docker file is in directory
+
+    C. port mapping
+        processes running on ports such as a server need to be mapped in order for requests to be hanlded by the port
+
+        docker run -p <port_num>  : <port_num_container> <image_id>
+
+        this command routes the incoming request from localhost to the container port
 
 II: Create and build docker images
 
@@ -65,8 +72,13 @@ II: Create and build docker images
 
     alpine versions of containers are the light weight/compact verison of the container
 
-III : Docker Image Syntax
-A. COPY ./ ./
-copies from specified path (the first ./) to destination
-Used to take files from your current directory and copy them into the docker
-image file system
+III: Docker file syntax
+
+    A. WORKDIR
+    addresses the issue when copying folders/file over current files maybe overwritten
+
+    B. COPY
+    command: COPY ./ ./
+    copies from specified path (the first ./) to destination
+    Used to take files from your current directory and copy them into the docker
+    image file system

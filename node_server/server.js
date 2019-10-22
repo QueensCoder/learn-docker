@@ -2,7 +2,7 @@ const exp = require('express');
 const app = exp();
 
 app.get('/', (req, res) => {
-  res.send('found me while running on docker w00t!');
+  res.send('123');
 });
 
 app.listen(3000, () => {
