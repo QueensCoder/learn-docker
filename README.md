@@ -26,6 +26,8 @@ I : Docker CLI commands
     To exit shell use ctrl d or cmd d or exit
 
     build . - builds a docker image based on which docker file is in directory
+    
+    build -f <filename> . - builds the image using the file name that is passed in after -f
 
     C. port mapping
         processes running on ports such as a server need to be mapped in order for requests to be hanlded by the port
