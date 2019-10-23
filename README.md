@@ -153,3 +153,14 @@ V Docker Volumes:
     
     -v /app/node_modules  -> makes docker bookmark the specified folder and do not map this folder, useful for
     node_modules or pip packages
+
+VI Advanced Commands/Command Chaining
+
+    docker build -f Dockerfile.dev -t ozkhan/react_test .  
+        -build container with specified file and name it ozkhan/react_test
+
+    docker run -p 3000:3000 -v /app/node_modules -v $(pwd):/app ozkhan/react_test
+        -port map local port 3000 to container port 3000, bookmark node_modules and use existing node modules
+        inside of container (node modules created by running npm install in container)
+        the second -v maps the current directory in local to app directory in the container
+        any changes in the local will update the container's files
