@@ -28,6 +28,9 @@ I : Docker CLI commands
     build . - builds a docker image based on which docker file is in directory
     
     build -f <filename> . - builds the image using the file name that is passed in after -f
+    
+    docker attach <filename/id>  -attachs your terminal's standard input, output, and error 
+    (or any combination of the three) to a running container using the container's ID or name.
 
     C. port mapping
         processes running on ports such as a server need to be mapped in order for requests to be hanlded by the port
