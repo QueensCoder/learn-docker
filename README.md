@@ -138,3 +138,18 @@ IV Docker Compose
     on-failure - restart container if it stops with an error code
 
     unless-stopped - restart container unless the developer stops it
+
+V Docker Volumes:
+    
+    A. volumes are similar to port mapping in the sense that it allows you to link local files/folders
+    to do the containers files/folders, this allows you to make changes in real time to the container
+    without having to rebuild the container, similar to hot reloading
+    
+    B. Syntax:
+    
+    docker run <some other commands like port mapping> -v $(pwd):/<folder-name> <image id/name>
+    
+    -v $(pwd):/app -> this maps the directory to the specified directory named app
+    
+    -v /app/node_modules  -> makes docker bookmark the specified folder and do not map this folder, useful for
+    node_modules or pip packages
